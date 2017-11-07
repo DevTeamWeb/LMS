@@ -9,4 +9,5 @@ Trabalho conclusão de semestre!
 *Henrique Brito Urban RA: 1600885
 *Mikael Ornelas de Araujo RA: 1700628
 *Deived Arruda RA: 1700590
+*Jhonatan Teodoro RA: 1700081
   
