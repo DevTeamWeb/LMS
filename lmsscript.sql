@@ -127,7 +127,7 @@ CREATE TABLE Questao (
     ,data_questao DATE NOT NULL
 	,CONSTRAINT fk_questao FOREIGN KEY (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma) REFERENCES Turma (nome_disciplina,ano_ofertado,semestre_ofertado,id)
     ,CONSTRAINT pk_questao PRIMARY KEY (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma,numero)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE ArquivoQuestao (
 	nome_disciplina VARCHAR (240) NOT NULL
