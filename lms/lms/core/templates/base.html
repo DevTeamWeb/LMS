@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+  <head>
+    <meta lang="pt-br">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title> Faculdade Impacta </title> <!-- NOME DA PAGINA -->
+
+    <!-- MATERIALIZE CSS E FONTES DO GOOGLE -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- FIM DO CSS E FONTES -->
+
+  </head>
+  <body>
+
+	                      <!-- INICIO DO CABEÇALHO -->
+<header>
+
+                           <!-- MENU DE NAVEGAÇÃO -->
+        <nav class="black">
+          <div class="nav-wrapper container">
+
+            <a href="{% url 'home' %}" class="brand-logo"><img src="{% static 'img/logo-novo.png' %}" class="responsive-image" width="200px"></a> <!-- Logo da Faculdade -->
+            <a href="#" data-activates="menu-mobile" class="button-collapse waves-effect"> <i class="material-icons">menu</i> </a>
+
+            <!-- Menu de Navegação de telas tablets ou superior -->
+                <ul id="nav-mobile" class="right hide-on-med-and-down white-text">
+                  <li><a href="#">A Faculdade</a></li>
+                  <li><a href="#">Forum</a></li>
+                  <li><a href="#">Contato</a></li>
+
+				  {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'aluno:home' %}">Bem-Vindo: {{ user.username }}</a>
+                    </li>
+                      <li>
+                          <a href="{% url 'conta:logout' %}">Deslogar</a>
+                      </li>
+
+                  {% else %}
+                    <li>
+                        <a href="{% url 'conta:login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            <!-- Menu de navegação de telas smartphones -->
+                <ul id="menu-mobile" class="side-nav">
+                  <li><a href="#">A Faculdade</a></li>
+                  <li><a href="#">Forum</a></li>
+                  <li><a href="#">Contato</a></li>
+				  <li><a href="#">Login</a></li>
+                </ul>
+
+          </div>
+        </nav>
+                           <!-- FIM DO MENU NAVEGAÇÃO -->
+	
+{% block content %}
+
+
+{% endblock %}
+						  
+						  
+
+    
+	<!-- RODAPÉ -->
+	<!-- Autor: Henrique Brito -->
+
+        <footer class="page-footer black">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">SOBRE</h5> <!-- Topico com informações sobre a faculdade -->
+                <p class="grey-text text-lighten-4">A Faculdade Impacta Tecnologia nasceu da percepção de um Grupo, que desde 1998 é referência em TI, Gestão e Design, para suprir a falta de mão de obra especializada do mercado de tecnologia e oferecer uma formação completa e multidisciplinar aos alunos.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">SIGA NOS</h5> <!-- Redes sociais da faculdade -->
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/FacImpacta/">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/facimpacta/">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/user/GrupoImpacta">Youtube</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/facimpacta">Twitter</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright"> <!--copyright -->
+            <div class="container">
+            © 2017 FIT - Faculdade Impacta Tecnologia            
+            </div>
+          </div>
+        </footer>
+	<!-- FIM RODAPÉ -->
+
+
+    <!-- MTERIALIZE js AND jquery -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+
+    <!--MENU PARTE SUPERIOR DA TELA COM: A Faculdade, contato, login etc.. -->
+    <script>
+      $(".button-collapse").sideNav();
+    </script>
+	
+	<!-- FUNCAO PARA OS SLIDED HOME -->
+	<script>
+	    $(document).ready(function(){
+      $('.slider').slider();
+    });
+	</script>
+  </body>
+</html>

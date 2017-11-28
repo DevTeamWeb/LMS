@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+</header>
+
+
+
+    <form class="row container" method="post" action="{{ request.path }}{% if next %}?next={{ next }}{% endif %}">
+
+        {% csrf_token %}
+            <br>
+            <h3 class="center">Área de Login</h3>
+
+                {{ form.non_field_errors }}
+
+                {% for field in form %}
+
+                <div class="group col s6 m6 l6 center">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+
+                {% endfor %}
+
+                <div class="center col s12">
+                    <button type="submit" class="btn waves-effect waves-light">Login</button>
+                </div>
+
+        </form>
+
+    </div>
+
+    <br><br><br><br>
+    <div class="row container">
+        <h4 class="center">Ainda não é cadastrado ?</h4>
+        <p class="center">
+            <a class="btn  teal pulse" href="{% url 'conta:register' %}">
+                Clieque aqui e Cadastre-se
+            <i class="material-icons">edit</i>
+            </a>
+        </p>
+    </div>
+
+
+{% endblock %}

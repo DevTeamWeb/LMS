@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+</header>
+<p>Seja bem vindo {% if user.is_authenticated %}{{ user.first_name }}{% else %}usuário anônimo{% endif %}</p>
+
+{% if user.is_authenticated %}
+<p><a href="{% url 'conta:logout' %}">Logout</a>.</p>
+{% else %}
+<p><a href="{% url 'conta:register' %}">Registre-se</a>.</p>
+<p><a href="{% url 'conta:login' %}">Login</a>.</p>
+{% endif %}
+
+{% endblock %}

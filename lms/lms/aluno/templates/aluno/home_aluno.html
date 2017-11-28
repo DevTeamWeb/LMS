@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  </header>
+<!-- fim do cabeçalho -->
+<div class="container">
+	<!-- SIDEBAR -->
+	<ul id="slide-out" class="side-nav">
+		<li><div class="user-view">
+			<div class="background">
+				<img src="mesa.jpeg">
+			</div>
+			<a href="#!user"><img class="circle" src="anonimo.png"></a>
+			<a href="#!name"><span class="name">Nome do aluno</span></a>
+			<a href="#!email"><span class="email">E-mail do aluno</span></a>
+		</div>
+		</li>
+		<li><div class="divider"></div></li>
+		<li><a class="waves-effect" href="#!">Área do aluno</a></li>
+		<li><a class="waves-effect" href="#!">Página inicial</a></li>
+		<li><a class="waves-effect" href="#!">Fale conosco</a></li>
+		<li><a class="waves-effect" href="#!">Logout</a></li>
+	</ul>
+	<a href="#" data-activates="slide-out" class="button-collapse"><i class="small material-icons">menu</i></a>
+	
+	<!-- LINKS -->
+	<div class="row">
+		<div class="col s3 m3 l3">
+			<ul>
+				<li><a class="waves-effect waves-teal btn-flat">Boletim de notas</a></li></br>
+				<li><a class="waves-effect waves-teal btn-flat">Verificação das AC's</a></li>
+			</ul>
+		</div>
+		<div calss="col s9 m9 l9"></div>
+	</div>
+	
+	<center><img src="area_aluno.jpeg"></center>
+	
+	<!-- QUADRO DE RECADOS -->
+	<ul class="collapsible white-text" data-collapsible="accordion" style="left:-250px;">
+		<li>
+		  <div class="collapsible-header blue"><i class="material-icons">notifications_active</i>Quadro de Recados</div>
+		  <div class=""><span></span></div>
+		</li>
+		<li>
+		  <div class="collapsible-header blue"><i class="material-icons">local_bar</i>Feriado</div>
+		  <div class="collapsible-body black-text"><span>Informamos que no dia 20/11/2017 não haverá aula, por conta do feriado da Consiência negra.</span></div>
+		</li>
+		<li>
+		  <div class="collapsible-header blue"><i class="material-icons">network_wifi</i>Conexão Wireless</div>
+		  <div class="collapsible-body black-text"><span>CONEXÃO WIRELESS</br>
+			Para se conectar à rede Wi-Fi da faculdade, deve-se selecionar a rede "Faculdade Impacta 2.4GHz" ou "Faculdade Impacta 5GHz.
+			Por favor seguir as seguintes orientações:
+			No campo Método EAP, selecionar a opção: PEAP
+			Em Autenticação da Fase 2, selecionar a opção: MSCHAPV2
+			O campo de idêntidade deve ser preenchido com a numeração do RA (Sendo o campo identidade anônima desnecessário)
+			A senha deve ser a mesma que o aluno utiliza para se logar nos computadores da Faculdade.
+			Qualquer dúvida contatar a inspetoria ou recepção para que a equipe de suporte seja acionada.</br>
+			Atenciosamente,</br>
+			Faculdade Impacta Tecnologia</span></div>
+		</li>
+		<li>
+		  <div class="collapsible-header blue"><i class="material-icons">school</i>Evento</div>
+		  <div class="collapsible-body black-text"><span>Informamos que no dia 18/11/2017 às 13:00, haverá uma palestra sobre tecnologia, que será realizada pela IBM.
+		  A palestra ocorrerá no auditório da faculdade.</br>
+		  Atenciosamente,</br>
+		  Faculdade Impacta Tecnologia.</span></div>
+		</li>
+	</ul>
+
+</div>
+	<!-- QUADRO DE RECADOS -->
+	<script>$(document).ready(function(){
+    $('.collapsible').collapsible();
+	});</script>
+ {% endblock %}

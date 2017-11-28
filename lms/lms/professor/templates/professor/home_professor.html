@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+  </header>
+<!-- começo menu professor -->
+<div class="container">
+<!-- SIDEBAR -->
+	<ul id="slide-out" class="side-nav">
+		<li><div class="user-view">
+			<div class="background">
+				<img src="mesa.jpeg">
+			</div>
+			<a href="#!user"><img class="circle" src="anonimo1.png"></a>
+			<a href="#!name"><span class="name">Wanderson</span></a>
+			<a href="#!email"><span class="email">Professor TecWeb</span></a>
+		</div>
+		</li>
+		<li><div class="divider"></div></li>
+		<li><a class="waves-effect" href="#!">Criar Grupo Alunos</a></li>
+		<li><a class="waves-effect" href="#!">Avisos</a></li>
+		<li><a class="waves-effect" href="#!">Minhas disciplinas</a></li>
+		<li><a class="waves-effect" href="#!">Criar testes online</a></li>
+		<li><a class="waves-effect" href="#!">Avaliar respostas de testes lançados</a></li>
+	</ul>
+	
+	<a href="#" data-activates="slide-out" class="button-collapse"><i class="small material-icons">menu</i></a>
+	
+	<!-- imagem central e texto central-->
+	
+	<h2 class="text-align center"> Área do professor </h2>
+	<center><img src="professor.png"></center>
+
+
+
+</div>
+
+
+
+ <!-- MATERIALIZE jquery -->
+ <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+    {% endblock %}

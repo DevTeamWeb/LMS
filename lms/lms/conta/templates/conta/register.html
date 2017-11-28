@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+</header>
+<br>
+
+<div class="container-center">
+
+            <form class="row container" method="post">
+
+                {% csrf_token %}
+                <h1 class="center">Cadastre-se</h1>
+                <fieldset>
+                    {{ form.non_field_errors }}
+
+                    {% for field in form %}
+                    <div class="group col s12 m5 l6">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                    {% endfor %}
+
+                    <div class="center">
+                        <button type="submit" class="btn waves-effect waves-light">Cadastrar</button>
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+    </div>
+</div>
+
+
+<br>
+
+
+<br>
+{% endblock %}
+<!--
+<div class="container">
+    <h4 class="center">Cadastre-se</h4>
+
+    <br>
+    <br>
+    <form class="center" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="input-field col s12 m5 l6">
+            <input type="text" name="username" placeholder="Digite um username" id="id_username" required autofocus maxlength="15" />
+            <label for="{{form.id_username}}">Usuário:</label>
+
+        </div>
+
+        <div class="input-field col s12 m5 l6">
+            <input type="email" name="email" placeholder="Digite seu E-mail" id="id_email" required maxlength="255" />
+            <label for="{{form.id_email}}">Endereço de email:</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s7">
+            <input type="text" name="nome_completo" id="id_nome_completo" required placeholder="Digite seu Nome">
+            <label for="{{form.id_nome_completo}}">Nome:</label>
+        </div>
+
+        <div class="input-field col s5">
+            <input type="text" name="contatos" placeholder="Telefone" id="id_contatos" required maxlength="11" />
+            <label for="{{fomr.id_contatos}}">Telefone:</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12 m5 l6">
+            <input type="password" name="password" placeholder="Digite uma Senha" id="id_password" required>
+            <label for="{{form.id_password}}">Senha:</label>
+        </div>
+
+        <div class="input-field col s12 m5 l6">
+            <input type="password" name="password2" placeholder="Confirme sua Senha" id="id_password2" required  />
+            <label for="{{form.id_password2}}">Confirmação de senha:</label>
+
+        </div>
+    </div>
+        <button type="submit" class="btn btn-warning">Register</button>
+    </form>
+</div>
+<br> -->
